@@ -2,7 +2,7 @@ package com.mapzen.android.graphics;
 
 import com.mapzen.android.core.MapzenManager;
 import com.mapzen.android.graphics.model.BitmapMarkerManager;
-import com.mapzen.android.graphics.model.BubbleWrapStyle;
+import com.mapzen.android.graphics.model.GomapStyle;
 import com.mapzen.android.graphics.model.MapStyle;
 import com.mapzen.android.graphics.model.ThemedMapStyle;
 import com.mapzen.tangram.MapController;
@@ -58,14 +58,14 @@ public class MapInitializer {
    * Initialize map for the current {@link MapView} and notify via {@link OnMapReadyCallback}.
    */
   public void init(final MapView mapView, final OnMapReadyCallback callback) {
-    loadMap(mapView, null, new BubbleWrapStyle(), false, callback);
+    loadMap(mapView, null, new GomapStyle(), false, callback);
   }
 
   /**
    * Initialize map for the current {@link MapView} and notify via {@link OnMapReadyCallback}.
    */
   public void init(final MapView mapView, String mapId, final OnMapReadyCallback callback) {
-    loadMap(mapView, mapId, new BubbleWrapStyle(), false, callback);
+    loadMap(mapView, mapId, new GomapStyle(), false, callback);
   }
 
   /**
@@ -112,10 +112,10 @@ public class MapInitializer {
   private void loadMap(final MapView mapView, String mapId, MapStyle mapStyle,
       boolean styleExplicitlySet, final OnMapReadyCallback callback) {
     MapStateManager mapStateManager = persistDataManagers.getMapStateManager(mapId);
-    if (mapStateManager.getPersistMapState() && !styleExplicitlySet) {
+    /*if (mapStateManager.getPersistMapState() && !styleExplicitlySet) {
       MapStyle restoredMapStyle = mapStateManager.getMapStyle();
       mapStyle = restoredMapStyle;
-    }
+    }*/
     mapStateManager.setMapStyle(mapStyle);
     if (mapStyle instanceof ThemedMapStyle) {
       ThemedMapStyle themedStyle = (ThemedMapStyle) mapStyle;

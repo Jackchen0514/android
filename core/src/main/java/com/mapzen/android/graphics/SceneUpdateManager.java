@@ -70,6 +70,6 @@ class SceneUpdateManager {
    * @return
    */
   SceneUpdate getApiKeyUpdate(String apiKey) {
-    return new SceneUpdate(STYLE_GLOBAL_VAR_API_KEY, apiKey);
+    return new SceneUpdate(STYLE_GLOBAL_VAR_API_KEY, "");
   }
 }

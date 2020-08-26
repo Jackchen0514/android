@@ -74,10 +74,10 @@ public class MapzenManager {
    * resource.
    */
   public @NonNull String getApiKey() {
-    if (apiKey == null || API_KEY_DEFAULT_VALUE.equals(apiKey)) {
+    /*if (apiKey == null || API_KEY_DEFAULT_VALUE.equals(apiKey)) {
       throw new IllegalStateException("A valid Mapzen API key has not been provided. Please visit "
           + "https://mapzen.com/documentation/android/getting-started/ to learn how.");
-    }
+    }*/
 
     return apiKey;
   }
